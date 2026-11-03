@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tank Warfare</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud">
+      <h1>TANK WARFARE</h1>
+      <div class="stats">
+        <span>❤️ Health: <b id="health">100</b></span>
+        <span>💰 Money: $<b id="money">0</b></span>
+        <span>🌊 Wave: <b id="wave">1</b></span>
+        <span>🎯 Kills: <b id="kills">0</b></span>
+      </div>
+      <div class="healthbar">
+        <div id="healthFill"></div>
+      </div>
+      <div class="shop">
+        <button id="repair">Repair $50</button>
+        <button id="damage">Damage Upgrade $100</button>
+        <button id="speed">Engine Upgrade $150</button>
+        <button id="armor">Armor Upgrade $200</button>
+      </div>
+      <div id="message">Defend yourself!</div>
+    </div>
+
+    <div id="gameover" class="hidden">
+      <h1>TANK DESTROYED</h1>
+      <p>You survived until wave <b id="finalWave">1</b></p>
+      <button onclick="location.reload()">PLAY AGAIN</button>
+    </div>
+
+    <div id="controls">
+      WASD: Drive | Mouse: Aim | Click: Shoot
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
