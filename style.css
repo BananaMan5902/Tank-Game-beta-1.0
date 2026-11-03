@@ -1,0 +1,156 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #171b17;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+#game {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+#hud {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: min(510px, calc(100vw - 20px));
+  padding: 12px;
+  background: rgba(15, 20, 15, 0.88);
+  border: 2px solid #68734c;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+#hud h1 {
+  margin: 0 0 10px;
+  color: #d4d99b;
+  font-size: 23px;
+  letter-spacing: 3px;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.healthbar {
+  margin-top: 10px;
+  height: 12px;
+  background: #402b28;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#healthFill {
+  width: 100%;
+  height: 100%;
+  background: #65b94e;
+  transition: width 0.2s;
+}
+
+.shop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 12px;
+  pointer-events: auto;
+}
+
+button {
+  background: #596c3c;
+  color: white;
+  border: 1px solid #a4b47b;
+  padding: 9px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+button:hover {
+  background: #829a52;
+}
+
+#message {
+  margin-top: 9px;
+  color: #d4d99b;
+  font-size: 13px;
+}
+
+#controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  padding: 9px 15px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+#gameover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+#gameover h1 {
+  color: #d94a3d;
+  font-size: 42px;
+}
+
+#gameover p {
+  font-size: 20px;
+}
+
+#gameover button {
+  font-size: 16px;
+  padding: 15px 30px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  #hud h1 {
+    font-size: 18px;
+  }
+
+  .stats {
+    gap: 7px;
+    font-size: 11px;
+  }
+
+  button {
+    padding: 7px;
+    font-size: 10px;
+  }
+
+  #controls {
+    font-size: 10px;
+  }
+}
